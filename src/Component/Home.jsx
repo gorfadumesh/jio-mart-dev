@@ -28,21 +28,21 @@ const Home = () => {
       title: "Cozy Cottage",
       price: "1200",
       location: "San Francisco, CA",
-      imageUrl: "https://via.placeholder.com/150",
+      imageUrl: "https://images.meesho.com/images/products/51982067/juuuw_256.webp",
       badgeText: "Featured"
     },
     {
       title: "Spacious Villa",
       price: "3000",
       location: "Los Angeles, CA",
-      imageUrl: "https://via.placeholder.com/150",
+      imageUrl: "https://images.meesho.com/images/products/19512057/6ycmh_256.webp",
       badgeText: "Best Seller"
     },
     {
       title: "Urban Studio",
       price: "1000",
       location: "Chicago, IL",
-      imageUrl: "https://via.placeholder.com/150",
+      imageUrl: "https://images.meesho.com/images/products/51224074/9ry9d_256.webp",
       badgeText: "New"
     }
   ];

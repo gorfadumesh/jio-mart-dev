@@ -249,7 +249,7 @@ function Navbar() {
               {length}
             </Box>
           </Flex>
-          <Flex color={"white"} ml={"30px"} gap={2}>
+          {/* <Flex color={"white"} ml={"30px"} gap={2}>
             <Center gap={2}>
               <Person2RoundedIcon />
               <p
@@ -323,7 +323,7 @@ function Navbar() {
                 ""
               )}
             </Center>
-          </Flex>
+          </Flex> */}
         </Flex>
       </Box>
       <Box>
