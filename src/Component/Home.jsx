@@ -95,7 +95,7 @@ const onClickDetail = () =>{
         <ImageCrausal/>
       </Box> */}
       <Box>
-      <Text textAlign={"left"} ml={"40px"} fontSize={"25px"} fontWeight= {'bold'}>Top Picks</Text>
+      <Text textAlign={"left"} m={"20px 20px 10px 20px"} fontSize={"25px"} fontWeight= {'600'}>Daily Deals</Text>
       <Box p={4}>
       <SimpleGrid columns={{ base: 2, md: 4 }} spacing={2}>
           {products.map((product, index) => (
@@ -113,22 +113,22 @@ const onClickDetail = () =>{
       </Box>
         {/* <ProdItems/> */}
       </Box>
-      <Box>
+      {/* <Box>
       <Text textAlign={"left"} ml={"40px"} fontSize={"25px"} fontWeight= {'bold'}>Top Deals</Text>
         <Prodcustom url="https://kiwi-discovered-pyjama.glitch.me/prod_Phone"/>
-      </Box>
-      <Box>
+      </Box> */}
+      {/* <Box>
       <Text textAlign={"left"} ml={"40px"} fontSize={"20px"} fontWeight={500} mt={"5px"}> Shop By Categoires</Text>
         <Imagesslider url="https://kiwi-discovered-pyjama.glitch.me/imagesslider1_shop"/>
-      </Box>
-      <Box>
+      </Box> */}
+      {/* <Box>
         <ImageCrausel2/>
       </Box>
       <Box>
       <Text textAlign={"left"} ml={"40px"} fontSize={"25px"} fontWeight= {'bold'}>Top Deals</Text>
         <Prodcustom  url="https://kiwi-discovered-pyjama.glitch.me/prod_Phone"/>
-      </Box>
-      <Box>
+      </Box> */}
+      {/* <Box>
       <Text textAlign={"left"} ml={"40px"} fontSize={"20px"} fontWeight={600} mt={"9px"} >Top Living Categories</Text>
       <Imagesslidershop url="https://kiwi-discovered-pyjama.glitch.me/imagesslider3_living"/>
       </Box>
@@ -146,8 +146,8 @@ const onClickDetail = () =>{
       <Box>
       <Text textAlign={"left"} ml={"40px"} fontSize={"20px"} fontWeight={600} mt={"9px"} >Top Makeup Categories</Text>
       <Imagesslidershop url="https://kiwi-discovered-pyjama.glitch.me/imagesslider5_Makeup"/>
-      </Box>
-      <Box>
+      </Box> */}
+      {/* <Box>
       <Text textAlign={"left"} ml={"40px"} fontSize={"25px"} fontWeight= {'bold'}>Top Deals</Text>
         <Prodcustom url="https://kiwi-discovered-pyjama.glitch.me/prod_Phone"/>
       </Box>
@@ -161,7 +161,7 @@ const onClickDetail = () =>{
       <Box mb={"20px"}>
       <Text textAlign={"left"} ml={"40px"} fontSize={"25px"} fontWeight= {'bold'}>Top Deals</Text>
         <Prodcustom url="https://kiwi-discovered-pyjama.glitch.me/prod_Phone"/>
-      </Box>
+      </Box> */}
     </Box>
       
   )
