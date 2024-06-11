@@ -1,0 +1,152 @@
+/* indivisualPage.css */
+
+/* General Page Styles */
+.indivisualPage {
+    padding: 20px;
+  }
+  
+  .topSection {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .left-img {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .right-data {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .product__name, .product__name-light {
+    margin: 10px 0;
+  }
+  
+  .crossedLine {
+    text-decoration: line-through;
+    color: red;
+  }
+  
+  .green__text {
+    color: green;
+  }
+  
+  .blue_text {
+    color: blue;
+  }
+  
+  .space_top_bottom {
+    margin: 10px 0;
+  }
+  
+  .space_Between {
+    margin: 0 10px;
+  }
+  
+  /* Button Styles */
+  .btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .cart-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Social Links */
+  .social__links a {
+    margin-right: 10px;
+    color: inherit;
+  }
+  
+  .social__links a:hover {
+    color: #007bff;
+  }
+  
+  /* Carousel Styles */
+  .carousel-container {
+    position: relative;
+  }
+  
+  .carousel-item-padding-40-px {
+    padding: 0 20px;
+  }
+  
+  .main-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    background-color: #f8f8f8;
+  }
+  
+  .main-image {
+    max-height: 100%;
+  }
+  
+  .idvCarousel img {
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .idvCarousel .smallSpace {
+    margin: 5px 0;
+  }
+  
+  /* Description Section */
+  .mid__section {
+    margin: 20px 0;
+  }
+  
+  .invisible {
+    display: none;
+  }
+  
+  .visible {
+    display: block;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    .topSection {
+      flex-direction: column;
+    }
+  
+    .left-img {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  
+    .right-data {
+      flex: unset;
+    }
+  
+    .social__links a {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
+  @media (max-width: 563px) {
+    .product__name, .product__name-light {
+      font-size: 18px;
+    }
+  
+    .btn {
+      padding: 8px;
+    }
+  }
+  

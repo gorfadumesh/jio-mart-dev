@@ -326,9 +326,7 @@ function Navbar() {
           </Flex> */}
         </Flex>
       </Box>
-      <Box>
-        <Navlist />
-      </Box>
+    
     </Box>
   );
 }

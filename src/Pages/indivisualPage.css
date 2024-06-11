@@ -185,6 +185,7 @@ a:hover {
 }
 
 @media all and (max-width: 719px) and (min-width: 200px) {
+  
     .indivisualPage{
         width: 95vw;
     }

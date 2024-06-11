@@ -15,17 +15,7 @@ const Footer = () =>{
                     <li>Baby Care</li>
                     <li>Snacks & Branded Foods</li>
                     <li>Dairy & Bakery</li>
-                </div>
-                <div>
-                    <h4>CUSTOMER SERVICES</h4>
-                    <li>About Us</li>
-                    <li>FAQ</li>
-                    <li>Terms and conditions</li>
-                    <li>Privacy policy</li>
-                    <li>E-waste Policy</li>
-                    <li>Cancellation and return policy</li>
-                </div>
-                <div>
+              
                     <h4>CONTACT US</h4>
                     <p>WhatsApp us : <span> 70003 70003</span></p>
                     <p>Call Us : <span> 1800 890 1222</span> <br /> 8:00 AM to 8:00 PM, 365 days</p>

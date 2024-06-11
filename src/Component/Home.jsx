@@ -12,10 +12,14 @@ import Prodcustom from '../Pages/Prodcustom'
 import ProdItems from '../Pages/ProdItems'
 import Singleslider from '../Pages/Singleslider'
 import ProductCard from '../Pages/ProductCard'
+import { useNavigate } from "react-router";
+import Navlist from './Navlist'
 
 
 
 const Home = () => {
+  const navigate = useNavigate();
+
   const products = [
     {
       title: "Modern Apartment",
@@ -46,8 +50,17 @@ const Home = () => {
       badgeText: "New"
     }
   ];
+
+const onClickDetail = () =>{
+  navigate("/productdetail")
+}
+
+
   return (
     <Box >
+        <Box>
+        <Navlist />
+      </Box>
       <Autocrausel2/>
       {/* <Center>
       <Flex direction={"column"} pt={"10px"} w={"99%"}>
@@ -93,6 +106,7 @@ const Home = () => {
               location={product.location}
               imageUrl={product.imageUrl}
               badgeText={product.badgeText}
+              onClick={()=>onClickDetail()}
             />
           ))}
         </SimpleGrid>

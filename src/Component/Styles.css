@@ -118,14 +118,57 @@
 .R-footer-icon{
     width: 100px;
 } 
-@media (max-width: 1300px) {
+/* @media (max-width: 1300px) {
     .navlist {
       display: none;
     }
-  }
+  } */
 
   @media (max-width:720px){
     .R-footer-icon{
         width: 60px;
     }
   }
+
+  .navlist {
+    display: flex;
+    overflow-x: scroll;
+    padding: 1rem;
+    white-space: nowrap;
+  }
+  
+  .category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1rem;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .category-item img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+  }
+  
+  .category-item p {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  @media (max-width: 600px) {
+    .category-item {
+      margin: 0 0.5rem;
+    }
+  
+    .category-item img {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .category-item p {
+      font-size: 0.75rem;
+    }
+  }
+  

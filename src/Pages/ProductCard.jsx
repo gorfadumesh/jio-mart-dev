@@ -1,9 +1,10 @@
 import React from 'react';
 import { Box, Image, Badge, Text, Button, Stack, useColorModeValue, HStack } from '@chakra-ui/react';
 
-const ProductCard = ({ title, price, location, imageUrl, badgeText }) => {
+const ProductCard = ({ title, price, location, imageUrl, badgeText,onClick }) => {
     return (
         <Box
+        cursor={"pointer"}
             maxW="sm"
             borderWidth="1px"
             borderRadius="lg"
@@ -14,6 +15,7 @@ const ProductCard = ({ title, price, location, imageUrl, badgeText }) => {
             display="flex"
             flexDirection="column" // Align items vertically
             justifyContent="space-between" // Space between items
+            onClick={onClick}
             
         >
             <Image src={imageUrl} alt="Product Image" objectFit="cover" w="100%" h="150px" />
