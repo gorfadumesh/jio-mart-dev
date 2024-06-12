@@ -22,10 +22,10 @@ a:hover {
 }
 
 .topSection :nth-child(1) {
-  width: 50%;
+  /* width: 50%; */
 }
 .topSection :nth-child(2) {
-  width: 50%;
+  /* width: 50%; */
 }
 .left-img {
   display: flex;
@@ -185,7 +185,22 @@ a:hover {
 }
 
 @media all and (max-width: 719px) and (min-width: 200px) {
-  
+  .mid__section {
+    width: 90vw;
+    padding: 5px;
+    height: auto;
+  }
+  .title_pro{
+    display: flex;
+    justify-content: left;
+    font-size: 24px;
+    font-weight: 600 !important;
+  }
+  .visible {
+    margin: auto;
+    width: 100%;
+    padding: 5px;
+  }
     .indivisualPage{
         width: 95vw;
     }
