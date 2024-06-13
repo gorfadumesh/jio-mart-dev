@@ -95,7 +95,7 @@ const onClickDetail = () =>{
         <ImageCrausal/>
       </Box> */}
       <Box>
-      <Text textAlign={"left"} m={"20px 20px 10px 20px"} fontSize={"25px"} fontWeight= {'600'}>Daily Deals</Text>
+      <Text textAlign={"left"} m={"20px 20px 10px 20px"} fontSize={"22px"} fontWeight= {'600'}>Daily Deals</Text>
       <Box p={4}>
       <SimpleGrid columns={{ base: 2, md: 4 }} spacing={2}>
           {products.map((product, index) => (

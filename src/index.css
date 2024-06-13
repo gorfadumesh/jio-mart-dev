@@ -59,3 +59,28 @@ html{
     font-size: 10px;
   }
 }
+
+/* Styles.css */
+.navlist-container {
+  padding-top: 20px !important;
+  display: flex;
+  overflow-x: auto; /* Change scroll to auto */
+  padding: 4px;
+  scroll-padding-left: 16px; /* Adjust padding to prevent the first item from being cut off */
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 8px;
+  min-width: 60px;
+  cursor: pointer;
+}
+
+.category-img {
+  width: 60px; /* Adjust the size as needed */
+  height: 60px; /* Adjust the size as needed */
+  border-radius: 50%; /* Ensures the image is circular */
+  object-fit: cover; /* Ensures the image covers the circle area */
+}

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Box, Image, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import "./Styles.css"; // Ensure your CSS file supports these styles
@@ -17,26 +16,19 @@ const Navlist = () => {
   const navigate = useNavigate();
 
   return (
-    <Box className="navlist" display="flex" justifyContent={"center"} overflowX="scroll" p={4}>
+    <Box className="navlist-container">
       {categories.map((category) => (
         <Box
           key={category.name}
           className="category-item"
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          m={2}
           onClick={() => navigate(category.path)}
-          cursor="pointer"
         >
           <Image
             src={category.imageUrl}
             alt={category.name}
-            borderRadius="full"
-            boxSize="60px"
-            objectFit="cover"
+            className="category-img"
           />
-          <Text mt={2}>{category.name}</Text>
+          <Text fontWeight={600} mt={2}>{category.name}</Text>
         </Box>
       ))}
     </Box>
@@ -44,3 +36,4 @@ const Navlist = () => {
 };
 
 export default Navlist;
+  

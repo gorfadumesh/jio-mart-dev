@@ -20,35 +20,35 @@ import { Box } from '@chakra-ui/react'
         pagination={{
           clickable: true,
         }}
-        navigation={true}
+        navigation={false}
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
         <SwiperSlide >
-            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1675014035_1674923987_Never_before_deals_1680.jpg"></img>
+            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1717780638_GheeBanner_West.jpg?im=Resize=(632,804)"></img>
         </SwiperSlide>
         <SwiperSlide>
-        <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1675014163_1674841440_1674798765_1674756780_Kitchenware_Desktop.jpg"></img>
+        <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1718041397_Best_Of_Mens_Footwear_1.jpg?im=Resize=(632,804)"></img>
         </SwiperSlide>
         <SwiperSlide>
-        <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1675014461_1674841627_Samsung_Galaxy_A14_5G_Desktop.jpg"></img> </SwiperSlide>
+        <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1718255169_Best_Selling_Furniture.jpg?im=Resize=(632,804)"></img> </SwiperSlide>
         <SwiperSlide>
-        <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1675012450_1673459553_Masala--Spices_1680x320.jpg"></img>
+        <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1718041153_iPhone_15.jpg?im=Resize=(632,804)"></img>
         </SwiperSlide>
         <SwiperSlide>
-            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1674824802_CM_HPMC_BANNER_NEW_1680.jpg" alt="" />
+            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1718213472_Top_Selling_Smart_TVs_1.jpg?im=Resize=(632,804)" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1675014323_1674841079_1674797556_1674794009_HPMC_-1_1680x320_copy_32.jpg" alt="" />
+            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1717776350_Breakfast.jpg?im=Resize=(632,804)" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1675014878_1673978068_1673226856_1672942714_Desktop_LaundryFest-min.jpg" alt="" />
+            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1718041453_Kurtas__Kurta_Sets_and_More.jpg?im=Resize=(632,804)" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1675015820_1674824242_foodbanner_1680x325.jpg" alt="" />
+            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1718213438_Prime_Bargains_On_Realme_Smartphones.jpg?im=Resize=(632,804)" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1674625802_Web_Mumbai_PremiumFruits.jpg" alt="" />
+            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1717776029_Biscuits.jpg?im=Resize=(632,804)" alt="" />
         </SwiperSlide>
       </Swiper>
     </Box>
