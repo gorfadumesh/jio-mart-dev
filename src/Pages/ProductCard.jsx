@@ -1,10 +1,11 @@
 import React from 'react';
 import { Box, Image, Badge, Text, Button, Stack, useColorModeValue, HStack } from '@chakra-ui/react';
+import { StarIcon } from '@chakra-ui/icons';
 
-const ProductCard = ({ title, price, location, imageUrl, badgeText,onClick }) => {
+const ProductCard = ({ title, price, location, imageUrl, badgeText, onClick }) => {
     return (
         <Box
-        cursor={"pointer"}
+            cursor={"pointer"}
             maxW="sm"
             borderWidth="1px"
             borderRadius="lg"
@@ -16,43 +17,54 @@ const ProductCard = ({ title, price, location, imageUrl, badgeText,onClick }) =>
             flexDirection="column" // Align items vertically
             justifyContent="space-between" // Space between items
             onClick={onClick}
-            
+
         >
             <Image src={imageUrl} alt="Product Image" objectFit="cover" w="100%" h="150px" />
 
             <Box p="2">
-                <Box display="flex" alignItems="baseline">
-                    <Badge borderRadius="full" px="2" colorScheme="teal">
-                        {badgeText}
-                    </Badge>
-                </Box>
+
 
                 <Box
                     mt="1"
-                    fontWeight="semibold"
+                    fontWeight={400}
                     as="h4"
                     lineHeight="tight"
                     isTruncated
                     fontSize={{ base: "sm", md: "md" }}
+                    fontw
+                    color={"rgb(139, 139, 163)"}
                 >
                     {title}
                 </Box>
 
-                <Box>
-                    ₹{price}
-                    <Box as="span" color="gray.600" fontSize="sm">
-                        / month
+                <Box display={"flex"} alignItems={"baseline"}>
+                    <Box
+                        fontSize={{ base: "22px", md: "md" }}
+                        fontWeight={600}
+                    >
+                        ₹{price}
+                    </Box>
+                    <Box ml={"5px"} fontWeight={400} color="rgb(139, 139, 163)" fontSize="14px">
+                        onwards
                     </Box>
                 </Box>
 
                 <HStack spacing={2} mt={2} alignItems="center">
-                    <Text fontSize={{ base: "xs", md: "sm" }} color={useColorModeValue('gray.600', 'gray.400')}>
-                        {location}
-                    </Text>
+                <Badge ml={0} background={"rgb(248, 248, 255)"} color={"rgb(97, 97, 115)"} display={"flex"} fontSize={"8px"} alignItems={"center"} borderRadius="full" px="2" py="1" textTransform={false} fontWeight={500} >
+                    Free Delivery
+                </Badge>
                 </HStack>
             </Box>
+            <Box display="flex" marginBottom={"10px"} alignItems={"center"}>
+                <Badge ml={"5px"} background={"rgb(35, 187, 117)"} color={"white"} display={"flex"} alignItems={"center"} borderRadius="full" px="2" py="1" >
+                    3.7 <StarIcon fontSize={"10px"} ml={"4px"} />
+                </Badge>
+                <Text ml={2} fontSize={{ base: "xs", md: "sm" }} color={"rgb(139, 139, 163)"}>
+                   234 Reviews
+                </Text>
+            </Box>
 
-            <Stack padding={4} mt="4" direction="row" spacing={4} justifyContent={"center"}>
+            {/* <Stack padding={4} mt="4" direction="row" spacing={4} justifyContent={"center"}>
                 <Button
                     flex={1}
                     fontSize={{ base: "xs", md: "sm" }} 
@@ -66,7 +78,7 @@ const ProductCard = ({ title, price, location, imageUrl, badgeText,onClick }) =>
                 >
                     Buy Now
                 </Button>
-            </Stack>
+            </Stack> */}
         </Box>
     );
 };
