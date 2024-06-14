@@ -34,8 +34,8 @@
     margin: 0px 20px;
     box-sizing: border-box;
 }
-.PaymentButton button{
-    width: 50%;
+.PaymentButton button{  
+    width: 70% !important;
     color: white;
     font-size: .9rem;
     padding: 10px 30px;

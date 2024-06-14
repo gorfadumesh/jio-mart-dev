@@ -11,8 +11,11 @@ import { Show, Hide, useToast, Button, Stack } from "@chakra-ui/react";
 import { AddToCart } from "../redux/Cart/action";
 import { useDispatch } from "react-redux";
 import review_image from "../Resources/review_image.jpeg"
+import { useNavigate } from "react-router";
 
 const CurrentIndivisualData = (payload) => {
+
+
   return axios.put(
     "https://kiwi-discovered-pyjama.glitch.me/indivisualPageData",
     payload
@@ -48,6 +51,7 @@ const getCarouselData = () => {
 };
 
 const ProductDetails = () => {
+  const navigate = useNavigate();
   const [description, setDescription] = useState(false);
   const [data, setData] = useState({});
   const [imgList, setImgList] = useState([]);
@@ -99,6 +103,10 @@ const ProductDetails = () => {
   useEffect(() => {
     handleGetdata();
   }, []);
+
+  const onClickBuy = () =>{
+    navigate("/order-address")
+  }
 
   return (
     <div className="indivisualPage">
@@ -169,6 +177,7 @@ const ProductDetails = () => {
                 _hover={{ bg: 'teal.500' }}
                 _focus={{ bg: 'teal.500' }}
                 minWidth="200px"
+                onClick={()=>onClickBuy()}
               >
                 Buy Now
               </Button>
