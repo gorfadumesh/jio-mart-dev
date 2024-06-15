@@ -22,17 +22,17 @@ const Home = () => {
 
   const products = [
     {
-      title: "Modern Apartment",
+      title: "Apple iPhone 14 Plus (128 GB) - Blue",
       price: "1500",
       location: "New York, NY",
-      imageUrl: "https://images.meesho.com/images/products/57409918/iucvm_256.webp",
+      imageUrl: "https://cdn.shopify.com/s/files/1/0805/0475/0393/products/71f5Eu5lJSL._SL1500.jpg?v=1690578663",
       badgeText: "New"
     },
     {
-      title: "Cozy Cottage",
+      title: "Samsung Galaxy S22 Ultra 5G (Green, 12GB, 256GB Storage)",
       price: "1200",
       location: "San Francisco, CA",
-      imageUrl: "https://images.meesho.com/images/products/51982067/juuuw_256.webp",
+      imageUrl: "https://cdn.shopify.com/s/files/1/0805/0475/0393/products/71PvHfU_pwL._SL1500.jpg?v=1690578929",
       badgeText: "Featured"
     },
     {
@@ -97,7 +97,7 @@ const onClickDetail = () =>{
       <Box>
       <Text textAlign={"left"} m={"20px 20px 10px 20px"} fontSize={"22px"} fontWeight= {'600'}>Daily Deals</Text>
       <Box p={4}>
-      <SimpleGrid columns={{ base: 2, md: 4 }} spacing={2}>
+      <SimpleGrid background={""} columns={{ base: 2, md: 4 }} spacing={2}>
           {products.map((product, index) => (
             <ProductCard
               key={index}

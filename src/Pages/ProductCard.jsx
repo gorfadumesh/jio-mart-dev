@@ -8,14 +8,15 @@ const ProductCard = ({ title, price, location, imageUrl, badgeText, onClick }) =
             cursor={"pointer"}
             maxW="sm"
             borderWidth="1px"
-            borderRadius="lg"
+            // borderRadius="lg"
             overflow="hidden"
             bg={useColorModeValue('white', 'gray.800')}
-            boxShadow="lg"
+            // boxShadow="lg"
             //   _hover={{ transform: 'scale(1.05)', transition: '0.3s' }}
             display="flex"
             flexDirection="column" // Align items vertically
             justifyContent="space-between" // Space between items
+            padding={2}
             onClick={onClick}
 
         >
@@ -31,16 +32,19 @@ const ProductCard = ({ title, price, location, imageUrl, badgeText, onClick }) =
                     lineHeight="tight"
                     isTruncated
                     fontSize={{ base: "sm", md: "md" }}
-                    fontw
-                    color={"rgb(139, 139, 163)"}
+                    color={"black"}
+                     maxW="200px"
+                     whiteSpace="nowrap"
+                     overflow="hidden"
+                     textOverflow="ellipsis"
                 >
                     {title}
                 </Box>
 
-                <Box display={"flex"} alignItems={"baseline"}>
+                <Box display={"flex"} mt={"10px"} alignItems={"baseline"}>
                     <Box
-                        fontSize={{ base: "22px", md: "md" }}
-                        fontWeight={600}
+                        fontSize={{ base: "14px", md: "md" }}
+                        fontWeight={700}
                     >
                         ₹{price}
                     </Box>
