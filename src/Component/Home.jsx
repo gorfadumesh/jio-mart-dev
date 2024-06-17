@@ -14,6 +14,7 @@ import Singleslider from '../Pages/Singleslider'
 import ProductCard from '../Pages/ProductCard'
 import { useNavigate } from "react-router";
 import Navlist from './Navlist'
+import Footer from './FooterPuneet'
 
 
 
@@ -113,56 +114,9 @@ const onClickDetail = () =>{
       </Box>
         {/* <ProdItems/> */}
       </Box>
-      {/* <Box>
-      <Text textAlign={"left"} ml={"40px"} fontSize={"25px"} fontWeight= {'bold'}>Top Deals</Text>
-        <Prodcustom url="https://kiwi-discovered-pyjama.glitch.me/prod_Phone"/>
-      </Box> */}
-      {/* <Box>
-      <Text textAlign={"left"} ml={"40px"} fontSize={"20px"} fontWeight={500} mt={"5px"}> Shop By Categoires</Text>
-        <Imagesslider url="https://kiwi-discovered-pyjama.glitch.me/imagesslider1_shop"/>
-      </Box> */}
-      {/* <Box>
-        <ImageCrausel2/>
-      </Box>
-      <Box>
-      <Text textAlign={"left"} ml={"40px"} fontSize={"25px"} fontWeight= {'bold'}>Top Deals</Text>
-        <Prodcustom  url="https://kiwi-discovered-pyjama.glitch.me/prod_Phone"/>
-      </Box> */}
-      {/* <Box>
-      <Text textAlign={"left"} ml={"40px"} fontSize={"20px"} fontWeight={600} mt={"9px"} >Top Living Categories</Text>
-      <Imagesslidershop url="https://kiwi-discovered-pyjama.glitch.me/imagesslider3_living"/>
-      </Box>
-      <Box>
-      <Text textAlign={"left"} ml={"40px"} fontSize={"25px"} fontWeight= {'bold'}>Top Deals</Text>
-        <Prodcustom url="https://kiwi-discovered-pyjama.glitch.me/prod_Phone"/>
-      </Box>
-      <Box>
-        <ImageCrausal3/>
-      </Box>
-      <Box>
-      <Text textAlign={"left"} ml={"40px"} fontSize={"20px"} fontWeight={600} mt={"9px"} >Top Fashion Categories</Text>
-      <Imagesslidershop url="https://kiwi-discovered-pyjama.glitch.me/imagesslider4_fashion"/>
-      </Box>
-      <Box>
-      <Text textAlign={"left"} ml={"40px"} fontSize={"20px"} fontWeight={600} mt={"9px"} >Top Makeup Categories</Text>
-      <Imagesslidershop url="https://kiwi-discovered-pyjama.glitch.me/imagesslider5_Makeup"/>
-      </Box> */}
-      {/* <Box>
-      <Text textAlign={"left"} ml={"40px"} fontSize={"25px"} fontWeight= {'bold'}>Top Deals</Text>
-        <Prodcustom url="https://kiwi-discovered-pyjama.glitch.me/prod_Phone"/>
-      </Box>
-      <Box>
-        <ImageCrausal4/>
-      </Box>
-      <Box>
-      <Text textAlign={"left"} ml={"40px"} fontSize={"20px"} fontWeight={600} mt={"9px"} >Babies Categories</Text>
-      <Imagesslidershop url="https://kiwi-discovered-pyjama.glitch.me/imagesslider6_Baby"/>
-      </Box>
-      <Box mb={"20px"}>
-      <Text textAlign={"left"} ml={"40px"} fontSize={"25px"} fontWeight= {'bold'}>Top Deals</Text>
-        <Prodcustom url="https://kiwi-discovered-pyjama.glitch.me/prod_Phone"/>
-      </Box> */}
+      <Footer />
     </Box>
+    
       
   )
 }

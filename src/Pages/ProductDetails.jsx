@@ -67,24 +67,25 @@ const ProductDetails = () => {
 
   const handleGetdata = () => {
     getData().then((res) => {
-      const productData = {
-        image: "https://www.jiomart.com/images/product/150x150/493177737/realme-c33-32-gb-3-gb-ram-aqua-blue-mobile-phone-digital-o493177737-p594311525-0-202210070516.jpeg",
-        name: "Oneplus Nord 2 5G",
-        id: 18,
-        price: 32499,
-        category: "Phone",
-        sampleImages: [
-          "https://www.jiomart.com/images/product/original/rvwtbpuaox/zikucr3150-m-product-images-rvwtbpuaox-0-202205211805.jpg?im=Resize=(600,750)",
-          "https://www.jiomart.com/images/product/original/rvwtbpuaox/zikucr3150-m-product-images-rvwtbpuaox-1-202205211805.jpg?im=Resize=(600,750)",
-          "https://www.jiomart.com/images/product/original/rvwtbpuaox/zikucr3150-m-product-images-rvwtbpuaox-2-202205211806.jpg?im=Resize=(600,750)",
-          "https://www.jiomart.com/images/product/original/rvwtbpuaox/zikucr3150-m-product-images-rvwtbpuaox-3-202205211806.jpg?im=Resize=(600,750)",
-          "https://www.jiomart.com/images/product/original/rvwtbpuaox/zikucr3150-m-product-images-rvwtbpuaox-4-202205211806.jpg?im=Resize=(600,750)",
-        ]
-
-      };
-      setData(productData);
-      setMainImage(productData.sampleImages[0]); // Initialize the main image
+   // Initialize the main image
     });
+    const productData = {
+      image: "https://www.jiomart.com/images/product/150x150/493177737/realme-c33-32-gb-3-gb-ram-aqua-blue-mobile-phone-digital-o493177737-p594311525-0-202210070516.jpeg",
+      name: "Oneplus Nord 2 5G",
+      id: 18,
+      price: 32499,
+      category: "Phone",
+      sampleImages: [
+        "https://www.jiomart.com/images/product/original/rvwtbpuaox/zikucr3150-m-product-images-rvwtbpuaox-0-202205211805.jpg?im=Resize=(600,750)",
+        "https://www.jiomart.com/images/product/original/rvwtbpuaox/zikucr3150-m-product-images-rvwtbpuaox-1-202205211805.jpg?im=Resize=(600,750)",
+        "https://www.jiomart.com/images/product/original/rvwtbpuaox/zikucr3150-m-product-images-rvwtbpuaox-2-202205211806.jpg?im=Resize=(600,750)",
+        "https://www.jiomart.com/images/product/original/rvwtbpuaox/zikucr3150-m-product-images-rvwtbpuaox-3-202205211806.jpg?im=Resize=(600,750)",
+        "https://www.jiomart.com/images/product/original/rvwtbpuaox/zikucr3150-m-product-images-rvwtbpuaox-4-202205211806.jpg?im=Resize=(600,750)",
+      ]
+
+    };
+    setData(productData);
+    setMainImage(productData.sampleImages[0]);
     getCarouselData().then((res) => setImgList(res.data));
   };
 
@@ -171,11 +172,11 @@ const ProductDetails = () => {
                 flex={1}
                 fontSize={{ base: "xs", md: "sm" }}
                 rounded="full"
-                bg="teal.400"
+                bg="#008ecc"
                 color="white"
                 boxShadow="0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)"
-                _hover={{ bg: 'teal.500' }}
-                _focus={{ bg: 'teal.500' }}
+                _hover={{ bg: '#008eaa' }}
+                _focus={{ bg: '#008edd' }}
                 minWidth="200px"
                 onClick={()=>onClickBuy()}
               >

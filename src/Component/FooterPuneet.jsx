@@ -29,7 +29,6 @@ const Footer = () =>{
                 </div>
             </div>
             <div>
-                <div>Best viewed on Microsoft Edge 81+, Mozilla Firefox 75+, Safari 5.1.5+, Google Chrome 80+</div>
                 <div>© 2022 All rights reserved. Reliance Retail Ltd.</div>
             </div>
         </div>

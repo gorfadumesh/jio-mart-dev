@@ -1,7 +1,13 @@
 .Address{
     width: 100%;
+    background-color: #f5f5f5;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 60px;
+    /* padding-bottom: 5px;
+    padding-top: 5px; */
 }
-.Address>div:nth-child(2){
+/* .Address>div:nth-child(2){
     width: 90%;
     margin: 20px auto;
     display: flex;
@@ -19,22 +25,39 @@
     padding:  20px;
     display: flex;
     gap: 20px;
-}
-.Address>div:nth-child(3)>div:nth-child(1){
+} */
+/* .Address>div:nth-child(3)>div:nth-child(1){
     width: 60%;
 }
 .Address>div:nth-child(3)>div:nth-child(2){
     width: 40%;
-}
+} */
+
+.PaymentButtonContainer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    padding: 10px;
+    text-align: center;
+  }
+  
+
+  
+  .PaymentButton:hover {
+    background-color: #2c5282;
+  }
 .PaymentButton{
     width: 100%;
     display: flex;
-    justify-content: end;
+    justify-content: center;
     padding: 20px;
-    margin: 0px 20px;
+    /* margin: 0px 20px; */
     box-sizing: border-box;
 }
-.PaymentButton button{  
+.PaymentBtn{  
     width: 70% !important;
     color: white;
     font-size: .9rem;
@@ -42,7 +65,7 @@
     background-color:
     #008ecc;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
 }
  .basket{
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -60,7 +83,7 @@
     color: gray;
 }
 @media all and (max-width:820px){
-.Address>div:nth-child(3){
+/* .Address>div:nth-child(3){
     flex-direction: column;
     width: 90%;
     padding: 10px;
@@ -70,5 +93,5 @@
 }
 .Address>div:nth-child(3)>div:nth-child(2){
     width: 100%;
-}
+} */
 }
