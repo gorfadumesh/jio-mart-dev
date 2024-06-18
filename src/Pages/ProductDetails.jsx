@@ -197,7 +197,7 @@ const ProductDetails = () => {
                         color={"green"}
                         fontWeight={600}
                     >
-                       You saved ₹833
+                       You will save ₹833
                     </Box>
                 </Box>
             </Text>
