@@ -103,6 +103,7 @@ const ProductDetails = () => {
 
   useEffect(() => {
     handleGetdata();
+    window.scrollTo(0, 0);
   }, []);
 
   const onClickBuy = () => {

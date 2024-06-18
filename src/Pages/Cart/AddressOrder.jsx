@@ -18,6 +18,7 @@ export const AddressOrder = () => {
       x = x + cart[i].price * cart[i].qty;
     }
     setPrice(x);
+    window.scrollTo(0, 0);
   }, [cart]);
 
   return (
