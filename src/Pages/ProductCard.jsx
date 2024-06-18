@@ -24,7 +24,6 @@ const ProductCard = ({ title, price, location, imageUrl, badgeText, onClick }) =
 
             <Box p="2">
 
-
                 <Box
                     mt="1"
                     fontWeight={400}
@@ -41,6 +40,17 @@ const ProductCard = ({ title, price, location, imageUrl, badgeText, onClick }) =
                     {title}
                 </Box>
 
+                <Box display={"flex"} mt={"10px"} alignItems={"baseline"}>
+                    <Box
+                        fontSize={{ base: "14px", md: "md" }}
+                        color={"green"}
+                    >
+                       99% off
+                    </Box>
+                    <Box ml={"10px"} fontWeight={400} color="rgb(139, 139, 163)" fontSize="14px">
+                    ₹3999
+                    </Box>
+                </Box>
                 <Box display={"flex"} mt={"10px"} alignItems={"baseline"}>
                     <Box
                         fontSize={{ base: "14px", md: "md" }}
