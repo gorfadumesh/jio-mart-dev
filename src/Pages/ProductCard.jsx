@@ -47,7 +47,7 @@ const ProductCard = ({ title, price, location, imageUrl, badgeText, onClick }) =
                     >
                        99% off
                     </Box>
-                    <Box ml={"10px"} fontWeight={400} color="rgb(139, 139, 163)" fontSize="14px">
+                    <Box ml={"10px"} fontWeight={400} color="rgb(139, 139, 163)" fontSize="14px" textDecoration={"line-through"}>
                     ₹3999
                     </Box>
                 </Box>

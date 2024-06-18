@@ -19,6 +19,7 @@ import Not from "../Resources/404.gif"
 import { Image } from "@chakra-ui/react";
 import { AddressOrder } from "../Pages/Cart/AddressOrder";
 import { MakePaymentPage } from "../Pages/Cart/MakePaymentPage";
+import { FinalPaymentPage } from "../Pages/Cart/FinalPaymentPage";
 const AllRoutes = () => {
   return (
     <div>
@@ -43,6 +44,7 @@ const AllRoutes = () => {
         <Route path="/order-address" element={<AddressOrder />} />
         <Route path="/payment" element={<PaymentPage />} />
         <Route path="/makepayment" element={<MakePaymentPage />} />
+        <Route path="/selectpayment" element={<FinalPaymentPage />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/adminPanel" element={<Adminpanel />} />
         <Route

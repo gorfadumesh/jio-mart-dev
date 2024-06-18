@@ -79,7 +79,7 @@ export const MakePaymentPage = () => {
             className='PaymentBtn'
             onClick={() => {
               // localStorage.setItem("price", price.toFixed(2));
-              // navigate('/makepayment');
+              navigate('/selectpayment');
             }}
           >
             Make Payment
