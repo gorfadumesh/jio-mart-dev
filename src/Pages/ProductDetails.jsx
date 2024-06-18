@@ -7,7 +7,7 @@ import { AiOutlineFacebook } from "react-icons/ai";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import axios from "axios";
-import { Show, Hide, useToast, Button, Stack } from "@chakra-ui/react";
+import { Show, Hide, useToast, Button, Stack, Box, Text } from "@chakra-ui/react";
 import { AddToCart } from "../redux/Cart/action";
 import { useDispatch } from "react-redux";
 import review_image from "../Resources/review_image.jpeg"
@@ -67,7 +67,7 @@ const ProductDetails = () => {
 
   const handleGetdata = () => {
     getData().then((res) => {
-   // Initialize the main image
+      // Initialize the main image
     });
     const productData = {
       image: "https://www.jiomart.com/images/product/150x150/493177737/realme-c33-32-gb-3-gb-ram-aqua-blue-mobile-phone-digital-o493177737-p594311525-0-202210070516.jpeg",
@@ -105,7 +105,7 @@ const ProductDetails = () => {
     handleGetdata();
   }, []);
 
-  const onClickBuy = () =>{
+  const onClickBuy = () => {
     navigate("/order-address")
   }
 
@@ -166,7 +166,7 @@ const ProductDetails = () => {
           <p className="space_top_bottom" style={{ display: "flex", justifyContent: "left", alignItems: "center", width: "100%", marginLeft: "40px" }}>
             Inaugural Offer <b>Free Shipping</b>
           </p>
-          <div>
+          {/* <div>
             <Stack padding={4} mt="4" direction="row" spacing={4} justifyContent={"center"}>
               <Button
                 flex={1}
@@ -183,6 +183,29 @@ const ProductDetails = () => {
                 Buy Now
               </Button>
             </Stack>
+          </div> */}
+          <div className='BuyButtonContainer'>
+            <Text>
+            <Box ml={"10px"} textAlign={"left"} >
+                  
+                    <Box  fontWeight={700}  fontSize="14px">
+                    ₹3999
+                    </Box>
+                    <Box
+                        fontSize={{ base: "14px", md: "md" }}
+                        color={"green"}
+                        fontWeight={600}
+                    >
+                       You saved ₹833
+                    </Box>
+                </Box>
+            </Text>
+            <button
+              className='buynowbtn'
+              onClick={()=>onClickBuy()}
+            >
+              Buy Now
+            </button>
           </div>
           <div className="social__links space_top_bottom">
             <a href="https://twitter.com/i/flow/login" target="_blank" rel="noopener noreferrer">
@@ -258,7 +281,7 @@ const ProductDetails = () => {
       <h3>
         <b>You May Also Like</b>
       </h3>
-      <Carousel
+      {/* <Carousel
         swipeable={false}
         draggable={false}
         showDots={true}
@@ -293,7 +316,7 @@ const ProductDetails = () => {
               </button>
             </div>
           ))}
-      </Carousel>
+      </Carousel> */}
     </div>
   );
 };

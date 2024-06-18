@@ -11,7 +11,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   margin: auto;
-  margin-top: 2.5rem;
+  /* margin-top: 2.5rem; */
   background-color: #fff;
   flex-direction: column;
 }
@@ -193,7 +193,7 @@ a:hover {
   .title_pro{
     display: flex;
     justify-content: left;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600 !important;
   }
   .visible {
@@ -253,5 +253,33 @@ a:hover {
   .space_Between {
     margin-right: 8px;
   }
+  
+}
+.BuyButtonContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: right;
+}
+.buynowbtn{
+  border-radius: 20px;
+  padding: 10px 0;
+  background: #027baf;
+  color: white;
+  height: 100%;
+  width: 50%;
+  padding: 10px;
+  
+}
+.buynowbtn:hover{
+  background: #008edd !important;
+
   
 }
