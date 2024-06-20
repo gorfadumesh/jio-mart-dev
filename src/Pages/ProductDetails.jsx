@@ -163,17 +163,17 @@ const ProductDetails = () => {
           </Hide>
 
 
-          <div style={{ display: "flex", justifyContent: "left", alignItems: "center", width: "100%", marginLeft: "40px" }} >
+          <div style={{ display: "flex", justifyContent: "left", alignItems: "center", width: "100%",  }} >
 
             <span className="crossedLine space_top_bottom">₹ 1599.00</span>
 
             <b className="space_Between" style={{ marginLeft: "5px" }}>Price : ₹ {data.price} </b>
           </div>
           <p className="space_top_bottom" style={{ display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "left", width: "100%" }}>
-            <span style={{ textAlign: "left", marginLeft: "20px" }}>
+            <span style={{ textAlign: "left", marginLeft: "0px" }}>
               You Save: ₹ <b className="green__text space_Between">833.00</b>
             </span>
-            <span style={{ textAlign: "left", marginLeft: "20px" }}>Inclusive of all taxes</span>
+            <span style={{ textAlign: "left", marginLeft: "0px" }}>Inclusive of all taxes</span>
           </p>
 
           <Box>
