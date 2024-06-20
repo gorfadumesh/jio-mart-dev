@@ -7,11 +7,14 @@ import { AiOutlineFacebook } from "react-icons/ai";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import axios from "axios";
-import { Show, Hide, useToast, Button, Stack, Box, Text } from "@chakra-ui/react";
+import { Show, Hide, useToast, Button, Stack, Box, Text, VStack, Icon, Image, HStack, Divider } from "@chakra-ui/react";
 import { AddToCart } from "../redux/Cart/action";
 import { useDispatch } from "react-redux";
 import review_image from "../Resources/review_image.jpeg"
 import { useNavigate } from "react-router";
+import StarRating from "../Component/Cart/StarRating";
+import Reliance_logo from "../Resources/Reliance_logo.png"
+import { FaTags, FaUniversity } from 'react-icons/fa';
 
 const CurrentIndivisualData = (payload) => {
 
@@ -109,16 +112,24 @@ const ProductDetails = () => {
   const onClickBuy = () => {
     navigate("/order-address")
   }
+  const [rating, setRating] = useState(4);
 
   return (
     <div className="indivisualPage">
       <div className="topSection">
         <Show className="" below="sm">
+          <Text textAlign={"left"} w={"100%"} mt={"10px"} fontWeight={600} color={"linkedin.700"}>
+            Oneplus
+          </Text>
 
-          <h3 className="product__name space_top_bottom title_pro">
+          <h3 className="product__name  title_pro">
             {data.title || data.name}
           </h3>
         </Show>
+        <StarRating size={15} rating={rating} setRating={setRating} />
+        <Box mt={3} w={"100%"}>
+          <Image ml={"-5px"} src={Reliance_logo} alt="logo" height={"25px "} />
+        </Box>
         <div className="left-img">
           <div className="left-carousel">
             {data?.sampleImages?.map((image, index) => (
@@ -140,6 +151,10 @@ const ProductDetails = () => {
           </div>
         </div>
 
+
+
+
+
         <div className="right-data">
           <Hide below="sm">
             <h3 className="product__name space_top_bottom ">
@@ -160,13 +175,48 @@ const ProductDetails = () => {
             </span>
             <span style={{ textAlign: "left", marginLeft: "20px" }}>Inclusive of all taxes</span>
           </p>
-          <p className="space_top_bottom" style={{ display: "flex", justifyContent: "left", alignItems: "center", width: "100%", marginLeft: "40px" }}>
-            <b>Sold by</b>{" "}
-            <b className="blue_text">O-KARMICA WELLNESS PRIVATE LIMITED</b>
+
+          <Box>
+            <Text fontSize="xl" textAlign={"left"} fontWeight="bold" mb={4}>
+              Offers (7)
+            </Text>
+            <VStack spacing={4} align="start">
+              <HStack spacing={4} align="center">
+                <Icon as={FaTags} w={6} h={6} color="green.500" />
+                <Box textAlign={"left"}>
+                  <Text fontWeight="bold">ADDITIONAL OFFERS</Text>
+                  <Text>Rs 100 Cashback on the first purchase of Rs 600 Or ...</Text>
+                  <Text>1 Offer/s Available</Text>
+                </Box>
+              </HStack>
+              <HStack spacing={4} align="center">
+                <Icon as={FaUniversity} w={6} h={6} color="green.500" />
+                <Box textAlign={"left"}>
+                  <Text fontWeight="bold">BANK OFFERS</Text>
+                  <Text>Get upto 5% cashback on using Mobikwik Wallet on ...</Text>
+                  <Text>6 Offer/s Available</Text>
+                </Box>
+              </HStack>
+            </VStack>
+          </Box>
+          <Divider mt={2} />
+
+          <p className="space_top_bottom" style={{ display: "flex", justifyContent: "left", alignItems: "center", width: "100%" }}>
+            <b style={{ width: "100px", textAlign: "left", fontSize: "12px" }}>Sold by :</b>{" "}
+            <Box w={"100%"}>
+              <Image ml={"-5px"} src={Reliance_logo} alt="logo" height={"25px "} />
+            </Box>
           </p>
-          <p className="space_top_bottom" style={{ display: "flex", justifyContent: "left", alignItems: "center", width: "100%", marginLeft: "40px" }}>
-            Inaugural Offer <b>Free Shipping</b>
+          <Divider mt={2} />
+          <p className="space_top_bottom" style={{ display: "flex", justifyContent: "left", alignItems: "center", width: "100%" }}>
+            <b style={{ width: "180px", textAlign: "left", fontSize: "12px" }}>Features & Details :</b>{" "}
+            <Box w={"100%"}>
+              <Text fontSize={"11px"}>
+                Made from the finest quality ingredients
+              </Text>
+            </Box>
           </p>
+
           {/* <div>
             <Stack padding={4} mt="4" direction="row" spacing={4} justifyContent={"center"}>
               <Button
@@ -187,28 +237,28 @@ const ProductDetails = () => {
           </div> */}
           <div className='BuyButtonContainer'>
             <Text>
-            <Box ml={"10px"} textAlign={"left"} >
-                  
-                    <Box  fontWeight={700}  fontSize="14px">
-                    ₹3999
-                    </Box>
-                    <Box
-                        fontSize={{ base: "14px", md: "md" }}
-                        color={"green"}
-                        fontWeight={600}
-                    >
-                       You will save ₹833
-                    </Box>
+              <Box ml={"10px"} textAlign={"left"} >
+
+                <Box fontWeight={700} fontSize="14px">
+                  ₹3999
                 </Box>
+                <Box
+                  fontSize={{ base: "14px", md: "md" }}
+                  color={"green"}
+                  fontWeight={600}
+                >
+                  You will save ₹833
+                </Box>
+              </Box>
             </Text>
             <button
               className='buynowbtn'
-              onClick={()=>onClickBuy()}
+              onClick={() => onClickBuy()}
             >
               Buy Now
             </button>
           </div>
-          <div className="social__links space_top_bottom">
+          {/* <div className="social__links space_top_bottom">
             <a href="https://twitter.com/i/flow/login" target="_blank" rel="noopener noreferrer">
               <CiTwitter style={{ width: "40px" }} />
             </a>
@@ -218,13 +268,12 @@ const ProductDetails = () => {
             <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
               <AiOutlineFacebook style={{ width: "40px" }} />
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="mid__section space_top_bottom space_Between">
-        <h3 className="space_top_bottom">
-          <b>Description</b>{" "}
-
+        <h3 className="">
+          <b style={{ width: "180px", textAlign: "left", fontSize: "12px" }}>Description :</b>{" "}
         </h3>
         <div className="visible">
           <h4>{data.title}</h4>
