@@ -322,7 +322,8 @@ const ProductDetails = () => {
         <a
           // className="btn"
           onClick={() => setDescription(!description)}
-          style={{ marginRight: "1re3" }}
+          style={{ marginRight: "1re3", color:"blue", fontSize:"12px", fontWeight:"600" }}
+
         >
           {description ? "Show Less" : "Show More"}
         </a>
