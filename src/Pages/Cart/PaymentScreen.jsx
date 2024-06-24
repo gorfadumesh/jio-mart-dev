@@ -22,11 +22,11 @@ import Paytm from "../../Resources/Paytm.png"
 
 const PaymentScreen = () => {
   return (
-    <Box p={2} maxW="500px" mx="auto" borderWidth="1px" >
-      <Heading size="md" mb={4}>
+    <Box p={2} maxW="500px" mx="auto" borderWidth="1px"  >
+      <Heading size="md" mb={4} fontSize={"14px"}>
         Select Payment Method
       </Heading>
-      <Text color="#027baf" mb={4} background={"#027baf40"} padding={"7px"} >
+      <Text color="#027baf" mb={4} background={"#027baf40"} padding={"7px"} margin={"5px"} borderRadius={"3px"} >
         Pay online & get EXTRA ₹25 off
       </Text>
       <Box position="relative" py={5}>
@@ -35,7 +35,7 @@ const PaymentScreen = () => {
           Pay Online
         </AbsoluteCenter>
       </Box>
-      <Accordion allowToggle defaultIndex={[0]}>
+      <Accordion allowToggle defaultIndex={[0]} height={"100vh"}>
         <AccordionItem borderTop={"none"} padding={"10px 0"}>
           <AccordionButton>
             <Box flex="1" textAlign="left" fontSize={"12px"}>
@@ -54,22 +54,22 @@ const PaymentScreen = () => {
 
               <Box display={"flex"} alignItems={"center"} padding={"10px"} >
                 <Radio value='1' />
-                <Image ml={"10px"} height={"30px"} src={PhonePay} alt="phonepay" />
-                <Text ml={"10px"} fontSize={"16px"} fontWeight={600} >
+                <Image ml={"10px"} height={"20px"} src={PhonePay} alt="phonepay" />
+                <Text ml={"10px"} fontSize={"14"} fontWeight={400} >
                   PhonePe
                 </Text>
               </Box>
               <Box display={"flex"} alignItems={"center"} padding={"10px"} >
                 <Radio disabled value='2 ' />
-                <Image ml={"10px"} height={"30px"} src={GooglePay} alt="phonepay" />
-                <Text ml={"10px"} fontSize={"16px"} fontWeight={600} >
+                <Image ml={"10px"} height={"20px"} src={GooglePay} alt="phonepay" />
+                <Text ml={"10px"} fontSize={"14"} fontWeight={400} >
                   Google Pay
                 </Text>
               </Box>
               <Box display={"flex"} alignItems={"center"} padding={"10px"} >
                 <Radio disabled value='3' />
-                <Image ml={"10px"} height={"30px"} src={Paytm} alt="phonepay" />
-                <Text ml={"10px"} fontSize={"16px"} fontWeight={600} >
+                <Image ml={"10px"} height={"20px"} src={Paytm} alt="phonepay" />
+                <Text ml={"10px"} fontSize={"14"} fontWeight={400} >
                   Paytm
                 </Text>
               </Box>

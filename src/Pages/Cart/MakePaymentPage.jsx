@@ -22,8 +22,9 @@ export const MakePaymentPage = () => {
       borderRadius="md" 
       display="flex" 
       alignItems="center"
+      margin={"10px"}
     >
-      <Icon as={FaPercent} w={6} h={6} color="green.500" />
+      <Icon as={FaPercent} w={5} h={5} color="green.500" />
       <Text ml={4} fontWeight="medium">Apply Coupon</Text>
       <Spacer />
       <Icon as={FaChevronRight} w={4} h={4} color="blue.500" />
@@ -48,7 +49,7 @@ export const MakePaymentPage = () => {
           <Box display={"flex"} m={"10px 0"}>
             <Box >
        
-              <Image borderRadius={"10px"} height={"60px"} margin={"5px"} src="https://www.jiomart.com/images/product/original/490998044/nivea-soft-light-moisturiser-cream-for-face-hands-body-300-ml-product-images-o490998044-p490998044-0-202305301942.jpg?im=Resize=(240,240)" alt="" />
+              <Image borderRadius={"10px"} height={"60px"} minWidth={"60px"} margin={"5px"} src="https://www.jiomart.com/images/product/original/490998044/nivea-soft-light-moisturiser-cream-for-face-hands-body-300-ml-product-images-o490998044-p490998044-0-202305301942.jpg?im=Resize=(240,240)" alt="" />
               <Box ml={"10px"} fontWeight={400} color="rgb(139, 139, 163)" fontSize="14px">
                    Qty. 1
                     </Box>
@@ -62,7 +63,7 @@ export const MakePaymentPage = () => {
                 isTruncated
                 fontSize={{ base: "16px", md: "md" }}
                 color={"black"}
-                maxW="250px"
+                maxW="200px"
                 whiteSpace="nowrap"
                 overflow="hidden"
                 textOverflow="ellipsis"
