@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { ResetCart } from "../../redux/Cart/action";
 import PhonePay from "../../Resources/PhonePay.png"
 import GooglePay from "../../Resources/GooglePay.png"
+import PaymentScreen from "./PaymentScreen";
 
 export const FinalPaymentPage = () => {
   let [checked, setChecked] = useState(false);
@@ -13,13 +14,13 @@ export const FinalPaymentPage = () => {
   const coupon = useSelector((store) => store.CartReducer.coupon)
   let navigate = useNavigate();
   const dispatch = useDispatch()
-  const onClickOnPay = () =>{
+  const onClickOnPay = () => {
     alert("Open Phone Pay")
   }
   return (
     <>
       <div className="container">
-        <div className="container-div1" style={{margin:"10px", height:"400px"}}>
+        {/* <div className="container-div1" style={{margin:"10px", height:"400px"}}>
           <Text fontSize={"18px"} margin={"10px"} fontWeight={600} >
             Payment Options
           </Text>
@@ -42,7 +43,7 @@ export const FinalPaymentPage = () => {
               </Box>
               <Box display={"flex"} alignItems={"center"} padding={"10px"} >
                 <Radio disabled value='3' />
-                {/* <Image ml={"10px"} height={"30px"} src={PhonePay} alt="phonepay" /> */}
+                <Image ml={"10px"} height={"30px"} src={PhonePay} alt="phonepay" />
                 <Text ml={"50px"} fontSize={"16px"} fontWeight={600} >
                   Cash On Delivery
                 </Text>
@@ -66,8 +67,33 @@ export const FinalPaymentPage = () => {
           </button>
           </Box>
 
+        </div> */}
+        <div>
+          <PaymentScreen />
         </div>
+      </div>
+      <div className='BuyButtonContainer'>
+        <Text>
+          <Box ml={"10px"} textAlign={"left"} >
 
+            <Box fontWeight={700} fontSize="14px">
+              ₹3999
+            </Box>
+            <Box
+              fontSize={{ base: "14px", md: "md" }}
+              color={"green"}
+              fontWeight={600}
+            >
+              You will save ₹833
+            </Box>
+          </Box>
+        </Text>
+        <button
+          className='buynowbtn'
+          onClick={() => onClickOnPay()}
+        >
+          Pay Now
+        </button>
       </div>
     </>
   );

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { useToast, Spinner, Box, Image, Text } from "@chakra-ui/react";
+import { useToast, Spinner, Box, Image, Text, Icon, Spacer } from "@chakra-ui/react";
 import { useNavigate } from "react-router";
 import "../Cart/PymentPage.css";
 import { useDispatch, useSelector } from "react-redux";
 import { ResetCart } from "../../redux/Cart/action";
 import { PaymentDetils } from "../../Component/Cart/PaymentDetils";
+import { FaChevronRight, FaPercent } from "react-icons/fa";
 export const MakePaymentPage = () => {
   let [checked, setChecked] = useState(false);
   const toast = useToast();
@@ -14,7 +15,20 @@ export const MakePaymentPage = () => {
   return (
     <>
       <div className="container">
-        <div className="">
+      <Box 
+      padding={5} 
+      bg="white" 
+      boxShadow="md" 
+      borderRadius="md" 
+      display="flex" 
+      alignItems="center"
+    >
+      <Icon as={FaPercent} w={6} h={6} color="green.500" />
+      <Text ml={4} fontWeight="medium">Apply Coupon</Text>
+      <Spacer />
+      <Icon as={FaChevronRight} w={4} h={4} color="blue.500" />
+    </Box>
+        <div className="" style={{padding:"10px", margin:"10px"}}>
           {/* <Box
             margin={"10px 0"}
             onClick={() => {
