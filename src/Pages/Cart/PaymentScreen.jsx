@@ -38,10 +38,10 @@ const PaymentScreen = () => {
       <Accordion allowToggle defaultIndex={[0]} height={"100vh"}>
         <AccordionItem borderTop={"none"} padding={"10px 0"}>
           <AccordionButton>
-            <Box flex="1" textAlign="left" fontSize={"12px"}>
+            <Box flex="1" textAlign="left" fontSize={"14px"} mr={"5px"} fontWeight={600}>
               UPI (GPay/PhonePe/Paytm)
             </Box>
-            <Text fontSize="10px" color="green.500" mr={4}>
+            <Text fontSize="12px" color="green.500" mr={4}>
               Offers Available
             </Text>
             <AccordionIcon />
@@ -52,21 +52,21 @@ const PaymentScreen = () => {
               <Box>
             <RadioGroup value="1" >
 
-              <Box display={"flex"} alignItems={"center"} padding={"10px"} >
+              <Box display={"flex"} alignItems={"center"} padding={"20px"} margin={"10px"} borderRadius={"20px"} boxShadow={"rgba(0, 0, 0, 0.16) 0px 1px 4px;"} >
                 <Radio value='1' />
                 <Image ml={"10px"} height={"20px"} src={PhonePay} alt="phonepay" />
                 <Text ml={"10px"} fontSize={"14"} fontWeight={400} >
                   PhonePe
                 </Text>
               </Box>
-              <Box display={"flex"} alignItems={"center"} padding={"10px"} >
+              <Box display={"flex"} alignItems={"center"} padding={"20px"} margin={"10px"} borderRadius={"20px"} boxShadow={"rgba(0, 0, 0, 0.16) 0px 1px 4px;"}>
                 <Radio disabled value='2 ' />
                 <Image ml={"10px"} height={"20px"} src={GooglePay} alt="phonepay" />
                 <Text ml={"10px"} fontSize={"14"} fontWeight={400} >
                   Google Pay
                 </Text>
               </Box>
-              <Box display={"flex"} alignItems={"center"} padding={"10px"} >
+              <Box display={"flex"} alignItems={"center"} padding={"20px"} margin={"10px"} borderRadius={"20px"} boxShadow={"rgba(0, 0, 0, 0.16) 0px 1px 4px;"}>
                 <Radio disabled value='3' />
                 <Image ml={"10px"} height={"20px"} src={Paytm} alt="phonepay" />
                 <Text ml={"10px"} fontSize={"14"} fontWeight={400} >
@@ -81,8 +81,11 @@ const PaymentScreen = () => {
         </AccordionItem>
         <AccordionItem isDisabled padding={"10px 0"}>
           <AccordionButton>
-            <Box flex="1" textAlign="left" fontSize={"12px"}>
-              Debit/Credit Cards (Not Available)
+            <Box flex="1" textAlign="left" fontSize={"14px"} display={"flex"} >
+              <Text mr={"5px"} fontWeight={700}>
+              Debit/Credit Cards
+              </Text>
+               (Not Available)
             </Box>
             <AccordionIcon />
           </AccordionButton>
@@ -96,8 +99,11 @@ const PaymentScreen = () => {
       </Box>
       <AccordionItem isDisabled borderTop={"none"} padding={"10px 0"}>
           <AccordionButton>
-            <Box flex="1" textAlign="left" fontSize={"12px"}>
-              Cash on Delivery (Not Available)
+            <Box flex="1" textAlign="left" fontSize={"14px"} display={"flex"}>
+             <Text mr={"5px"} fontWeight={700}>
+               Cash on Delivery
+              </Text>
+                (Not Available)
             </Box>
             <AccordionIcon />
           </AccordionButton>
