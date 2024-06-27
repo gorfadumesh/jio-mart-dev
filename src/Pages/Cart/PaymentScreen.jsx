@@ -38,7 +38,7 @@ const PaymentScreen = () => {
       <Accordion allowToggle defaultIndex={[0]} height={"100vh"}>
         <AccordionItem borderTop={"none"} padding={"10px 0"}>
           <AccordionButton>
-            <Box flex="1" textAlign="left" fontSize={"14px"} mr={"5px"} fontWeight={600}>
+            <Box flex="1" textAlign="left" fontSize={"16px"} mr={"5px"} fontWeight={600}>
               UPI (GPay/PhonePe/Paytm)
             </Box>
             <Text fontSize="12px" color="green.500" mr={4}>
@@ -81,11 +81,13 @@ const PaymentScreen = () => {
         </AccordionItem>
         <AccordionItem isDisabled padding={"10px 0"}>
           <AccordionButton>
-            <Box flex="1" textAlign="left" fontSize={"14px"} display={"flex"} >
-              <Text mr={"5px"} fontWeight={700}>
+            <Box flex="1" textAlign="left" fontSize={"16px"} display={"flex"} >
+              <Text mr={"5px"} fontWeight={800} color={"black"}>
               Debit/Credit Cards
               </Text>
+              <Text color={"red"} >
                (Not Available)
+              </Text>
             </Box>
             <AccordionIcon />
           </AccordionButton>
@@ -99,17 +101,19 @@ const PaymentScreen = () => {
       </Box>
       <AccordionItem isDisabled borderTop={"none"} padding={"10px 0"}>
           <AccordionButton>
-            <Box flex="1" textAlign="left" fontSize={"14px"} display={"flex"}>
-             <Text mr={"5px"} fontWeight={700}>
+            <Box flex="1" textAlign="left" fontSize={"16px"} display={"flex"}>
+             <Text mr={"5px"} fontWeight={800} color={"black"}>
                Cash on Delivery
               </Text>
-                (Not Available)
+              <Text color={"red"} >
+               (Not Available)
+              </Text>
             </Box>
             <AccordionIcon />
           </AccordionButton>
         </AccordionItem>
       </Accordion>
-      <Box mt={5} textAlign="center" display={"flex"} alignItems={"center"} justifyContent={"space-between"}>
+      {/* <Box mt={5} textAlign="center" display={"flex"} alignItems={"center"} justifyContent={"space-between"}>
         <Text mb={2}>Reselling the Order?</Text>
         <Box display={"flex"} alignItems={"center"}>
         <Button colorScheme="pink" mr={2} borderRadius={"20px"} fontSize={"14px"} >
@@ -119,7 +123,7 @@ const PaymentScreen = () => {
           Yes
         </Button>
           </Box>
-      </Box>
+      </Box> */}
     </Box>
   );
 };
