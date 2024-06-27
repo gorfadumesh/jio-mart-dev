@@ -70,12 +70,7 @@ const Sidebar = ({ sidebar, showSidebar }) => {
             <hr />
             <div id="side-cont">
               <h3 style={{ fontWeight: 800 }}>CONTACT US</h3>
-              <p>
-                WhatsApp us:<span className="side-color">70003 70003 </span>
-              </p>
-              <p>
-                Call Us : <span className="side-color">1800 890 1222</span>
-              </p>
+           
               <p>8:00 AM to 8:00 PM, 365 days</p>
               <p>
                 Please note that you are accessing the BETA Version of

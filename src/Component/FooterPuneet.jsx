@@ -17,8 +17,7 @@ const Footer = () =>{
                     <li>Dairy & Bakery</li>
               
                     <h4>CONTACT US</h4>
-                    <p>WhatsApp us : <span> 70003 70003</span></p>
-                    <p>Call Us : <span> 1800 890 1222</span> <br /> 8:00 AM to 8:00 PM, 365 days</p>
+                
                     <p>Please note that you are accessing the <br /> BETA Version of www.jiomart.com</p>
                     <p>Should you encounter any bugs, glitches, lack <br /> of functionality, delayed deliveries, billing errors <br /> or other problems on the beta website, please <br /> email us on <span> cs@jiomart.com</span></p>
                     <h4>DOWNLOAD APP</h4>
