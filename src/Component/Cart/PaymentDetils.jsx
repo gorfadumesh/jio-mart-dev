@@ -3,7 +3,7 @@ import "../Cart/PaymentDetails.css"
 import {ApplyCouponFn} from '../../redux/Cart/action'
 import { useSelector } from 'react-redux'
 import { Text } from '@chakra-ui/react'
-export const PaymentDetils = ({cartPrice}) => {
+export const PaymentDetils = ({cartPrice,itemData}) => {
     const coupon = useSelector((store)=> store.CartReducer.coupon)
     return (
         <div className='Payment'>
@@ -12,11 +12,11 @@ export const PaymentDetils = ({cartPrice}) => {
             </div>
             <div className='payee'>
                 <div>Price (1 item)</div>
-                <div>₹{cartPrice}</div>
+                <div>₹{itemData.mrp}</div>
             </div>
             <div className='payee'>
                 <div> Discount</div>
-                <Text color={"#069e06"} >-₹{coupon ? Math.floor(cartPrice*0.4) : Math.floor(cartPrice*0.2)}</Text  >
+                <Text color={"#069e06"} >-₹{itemData.mrp - itemData.sellingPrice}</Text  >
             </div>
             <div className='payee'>
                 <div>Delivery Charges</div>
@@ -25,11 +25,11 @@ export const PaymentDetils = ({cartPrice}) => {
             <hr />
             <div className='payee '>
                 <div>Total Amount</div>
-                <div>₹{coupon ? cartPrice*0.6 : Math.floor(cartPrice*0.8)}</div>
+                <div>₹{itemData.sellingPrice}</div>
             </div>
             <hr />
             <div className='green' style={{textAlign:"left", color:"#069e06", fontSize:"16px", fontWeight:"600" }} >
-                You will save ₹{coupon ? "40% " : Math.floor(cartPrice*0.2)} on this order
+                You will save ₹{itemData.mrp - itemData.sellingPrice} on this order
             </div>
         </div>
     )

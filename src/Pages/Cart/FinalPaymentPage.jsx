@@ -1,73 +1,52 @@
-import React, { useState } from "react";
-import { useToast, Spinner, Box, Radio, Image, Text, RadioGroup } from "@chakra-ui/react";
-import { useNavigate } from "react-router";
+import React, { useState, useEffect } from "react";
+import { useToast, Spinner, Box, Text } from "@chakra-ui/react";
+import { useNavigate, useParams } from "react-router";
+import axios from "axios";
 import "../Cart/PymentPage.css";
 import { useDispatch, useSelector } from "react-redux";
-import { ResetCart } from "../../redux/Cart/action";
-import PhonePay from "../../Resources/PhonePay.png"
-import GooglePay from "../../Resources/GooglePay.png"
 import PaymentScreen from "./PaymentScreen";
 
-export const FinalPaymentPage = () => {
-  let [checked, setChecked] = useState(false);
-  const toast = useToast();
-  const coupon = useSelector((store) => store.CartReducer.coupon)
-  let navigate = useNavigate();
-  const dispatch = useDispatch()
-  const onClickOnPay = () => {
-    alert("Open Phone Pay")
+const fetchProductDetails = async (id, baseUrl) => {
+  try {
+    const response = await axios.get(`${baseUrl}product/${id}`);
+    return response.data.data;
+  } catch (error) {
+    console.error('Error fetching product details:', error);
+    return null;
   }
+};
+
+export const FinalPaymentPage = () => {
+  const { id } = useParams();
+  const [productDetails, setProductDetails] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const toast = useToast();
+  const coupon = useSelector((store) => store.CartReducer.coupon);
+  let navigate = useNavigate();
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    const baseUrl = process.env.REACT_APP_BASE_URL;
+    const fetchDetails = async () => {
+      const details = await fetchProductDetails(id, baseUrl);
+      setProductDetails(details);
+      setIsLoading(false);
+    };
+
+    fetchDetails();
+  }, [id]);
+
+  const onClickOnPay = () => {
+    alert("Open Phone Pay");
+  };
+
+  if (isLoading) {
+    return <Spinner />;
+  }
+
   return (
     <>
       <div className="container">
-        {/* <div className="container-div1" style={{margin:"10px", height:"400px"}}>
-          <Text fontSize={"18px"} margin={"10px"} fontWeight={600} >
-            Payment Options
-          </Text>
-          <Box>
-            <RadioGroup value="1" >
-
-              <Box display={"flex"} alignItems={"center"} padding={"10px"} >
-                <Radio value='1' />
-                <Image ml={"10px"} height={"30px"} src={PhonePay} alt="phonepay" />
-                <Text ml={"10px"} fontSize={"16px"} fontWeight={600} >
-                  PhonePay
-                </Text>
-              </Box>
-              <Box display={"flex"} alignItems={"center"} padding={"10px"} >
-                <Radio disabled value='2 ' />
-                <Image ml={"10px"} height={"30px"} src={GooglePay} alt="phonepay" />
-                <Text ml={"10px"} fontSize={"16px"} fontWeight={600} >
-                  Google Pay
-                </Text>
-              </Box>
-              <Box display={"flex"} alignItems={"center"} padding={"10px"} >
-                <Radio disabled value='3' />
-                <Image ml={"10px"} height={"30px"} src={PhonePay} alt="phonepay" />
-                <Text ml={"50px"} fontSize={"16px"} fontWeight={600} >
-                  Cash On Delivery
-                </Text>
-              </Box>
-            </RadioGroup>
-          </Box>
-          <Box
-          display={"flex"}
-          alignItems={"center"}
-          justifyContent={"center"}
-          padding={"30px 10px"}
-          >
-
-          <button
-            className='PaymentBtn'
-            onClick={() => {
-          onClickOnPay()
-            }}
-          >
-            Pay 
-          </button>
-          </Box>
-
-        </div> */}
         <div>
           <PaymentScreen />
         </div>
@@ -75,16 +54,15 @@ export const FinalPaymentPage = () => {
       <div className='BuyButtonContainer'>
         <Text>
           <Box ml={"10px"} textAlign={"left"} >
-
             <Box fontWeight={700} fontSize="14px">
-              ₹3999
+              ₹{productDetails ? productDetails.sellingPrice : 0}
             </Box>
             <Box
               fontSize={{ base: "14px", md: "md" }}
               color={"green"}
               fontWeight={600}
             >
-              You will save ₹833
+              You will save ₹{productDetails ? productDetails.mrp - productDetails.sellingPrice : 0}
             </Box>
           </Box>
         </Text>

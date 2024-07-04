@@ -29,7 +29,7 @@ const AllRoutes = () => {
         <Route path="/beverages" element={<BevverageProducts />} />
         <Route path="/electronicProducts" element={<ElectronicProducts />} />
         <Route path="/indivisualPage" element={<IndivisualPage />} />
-        <Route path="/productdetail" element={<ProductDetails />} />
+        <Route path="/productdetail/:id" element={<ProductDetails />} />
         <Route path="/fruitsAndVegetables" element={<FruitsAndVegetables />} />
         <Route
           path="/cart"
@@ -41,10 +41,10 @@ const AllRoutes = () => {
         />
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/address" element={<Address />} />
-        <Route path="/order-address" element={<AddressOrder />} />
+        <Route path="/order-address/:id" element={<AddressOrder />} />
         <Route path="/payment" element={<PaymentPage />} />
-        <Route path="/makepayment" element={<MakePaymentPage />} />
-        <Route path="/selectpayment" element={<FinalPaymentPage />} />
+        <Route path="/makepayment/:id" element={<MakePaymentPage />} />
+        <Route path="/selectpayment/:id" element={<FinalPaymentPage />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/adminPanel" element={<Adminpanel />} />
         <Route

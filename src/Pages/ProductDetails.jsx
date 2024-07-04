@@ -10,20 +10,11 @@ import axios from "axios";
 import { Show, Hide, useToast, Button, Stack, Box, Text, VStack, Icon, Image, HStack, Divider } from "@chakra-ui/react";
 import { AddToCart } from "../redux/Cart/action";
 import { useDispatch } from "react-redux";
-import review_image from "../Resources/review_image.jpeg"
-import { useNavigate } from "react-router";
+import review_image from "../Resources/review_image.jpeg";
+import { useNavigate, useParams } from "react-router";
 import StarRating from "../Component/Cart/StarRating";
-import Reliance_logo from "../Resources/Reliance_logo.png"
+import Reliance_logo from "../Resources/Reliance_logo.png";
 import { FaTags, FaUniversity } from 'react-icons/fa';
-
-const CurrentIndivisualData = (payload) => {
-
-
-  return axios.put(
-    "https://kiwi-discovered-pyjama.glitch.me/indivisualPageData",
-    payload
-  );
-};
 
 const responsive = {
   desktop: {
@@ -43,17 +34,12 @@ const responsive = {
   },
 };
 
-const getData = () => {
-  return axios.get(
-    "https://kiwi-discovered-pyjama.glitch.me/indivisualPageData"
-  );
-};
-
-const getCarouselData = () => {
-  return axios.get("https://kiwi-discovered-pyjama.glitch.me/carousel_idvPage");
+const getProductDetails = (id) => {
+  return axios.get(`${process.env.REACT_APP_BASE_URL}product/${id}`);
 };
 
 const ProductDetails = () => {
+  const { id } = useParams(); // Extract the id from the URL parameters
   const navigate = useNavigate();
   const [description, setDescription] = useState(false);
   const [data, setData] = useState({});
@@ -62,34 +48,20 @@ const ProductDetails = () => {
   const dispatch = useDispatch();
   const toast = useToast();
 
-  const handleCurrentData = (item) => {
-    CurrentIndivisualData(item).then((res) => handleGetdata());
-  };
-
 
 
   const handleGetdata = () => {
-    getData().then((res) => {
-      // Initialize the main image
+    getProductDetails(id).then((res) => {
+      const productData = res.data.data;
+      setData(productData);
+      console.log(productData, "---------------------------------")
+      setMainImage(productData.image1);
+      const images = [productData.image1, productData.image2, productData.image3, productData.image4, productData.image5].filter(img => img);
+      setImgList(images);
+    }).catch((error) => {
+      console.error(error);
+      // Handle error (e.g., navigate to a 404 page or show a message)
     });
-    const productData = {
-      image: "https://www.jiomart.com/images/product/150x150/493177737/realme-c33-32-gb-3-gb-ram-aqua-blue-mobile-phone-digital-o493177737-p594311525-0-202210070516.jpeg",
-      name: "Oneplus Nord 2 5G",
-      id: 18,
-      price: 32499,
-      category: "Phone",
-      sampleImages: [
-        "https://www.jiomart.com/images/product/original/rvwtbpuaox/zikucr3150-m-product-images-rvwtbpuaox-0-202205211805.jpg?im=Resize=(600,750)",
-        "https://www.jiomart.com/images/product/original/rvwtbpuaox/zikucr3150-m-product-images-rvwtbpuaox-1-202205211805.jpg?im=Resize=(600,750)",
-        "https://www.jiomart.com/images/product/original/rvwtbpuaox/zikucr3150-m-product-images-rvwtbpuaox-2-202205211806.jpg?im=Resize=(600,750)",
-        "https://www.jiomart.com/images/product/original/rvwtbpuaox/zikucr3150-m-product-images-rvwtbpuaox-3-202205211806.jpg?im=Resize=(600,750)",
-        "https://www.jiomart.com/images/product/original/rvwtbpuaox/zikucr3150-m-product-images-rvwtbpuaox-4-202205211806.jpg?im=Resize=(600,750)",
-      ]
-
-    };
-    setData(productData);
-    setMainImage(productData.sampleImages[0]);
-    getCarouselData().then((res) => setImgList(res.data));
   };
 
   const PostToCart = (item) => {
@@ -107,11 +79,12 @@ const ProductDetails = () => {
   useEffect(() => {
     handleGetdata();
     window.scrollTo(0, 0);
-  }, []);
+  }, [id]); // Fetch data when the id changes
 
-  const onClickBuy = () => {
-    navigate("/order-address")
-  }
+  const onClickBuy = (id) => {
+    navigate(`/order-address/${id}`);
+  };
+
   const [rating, setRating] = useState(4);
 
   return (
@@ -119,12 +92,12 @@ const ProductDetails = () => {
       <div className="topSection">
         <Show className="" below="sm">
           <Text textAlign={"left"} w={"100%"} mt={"10px"} fontWeight={600} color={"linkedin.700"}>
-            Oneplus
+            Jio-Mart
           </Text>
 
-          <h3 className="product__name  title_pro">
+          <Text className="product__name  title_pro" textAlign={"left"} fontSize={"16px"}>
             {data.title || data.name}
-          </h3>
+          </Text>
         </Show>
         <StarRating size={15} rating={rating} setRating={setRating} />
         <Box mt={3} w={"100%"}>
@@ -132,10 +105,10 @@ const ProductDetails = () => {
         </Box>
         <div className="left-img">
           <div className="left-carousel">
-            {data?.sampleImages?.map((image, index) => (
+            {imgList && imgList?.map((image, index) => (
               <img
                 key={index}
-                style={{ width: "90%" }}
+                style={{ width: "90%", border: image == mainImage ? "1px solid #027baf" : "", padding: "5px", borderRadius: "10px" }}
                 src={image}
                 alt={`demo${index + 1}`}
                 onClick={() => setMainImage(image)} // Set the main image on click
@@ -144,7 +117,7 @@ const ProductDetails = () => {
           </div>
           <div className="right-main">
             <img
-              style={{ width: "90%" }}
+              style={{ height: "180px", width: "auto" }}
               src={mainImage} // Use the state variable for the main image
               alt={data.title || data.name}
             />
@@ -163,15 +136,15 @@ const ProductDetails = () => {
           </Hide>
 
 
-          <div style={{ display: "flex", justifyContent: "left", alignItems: "center", width: "100%",  }} >
+          <div style={{ display: "flex", justifyContent: "left", alignItems: "center", width: "100%", }} >
 
-            <span className="crossedLine space_top_bottom">₹ 1599.00</span>
+            <span className="crossedLine space_top_bottom">₹ {data.mrp}</span>
 
-            <b className="space_Between" style={{ marginLeft: "5px" }}>Price : ₹ {data.price} </b>
+            <b className="space_Between" style={{ marginLeft: "5px" }}>Price : ₹ {data.sellingPrice} </b>
           </div>
           <p className="space_top_bottom" style={{ display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "left", width: "100%" }}>
             <span style={{ textAlign: "left", marginLeft: "0px" }}>
-              You Save: ₹ <b className="green__text space_Between">833.00</b>
+              You Save: ₹ <b className="green__text space_Between">{data.mrp - data.sellingPrice}</b>
             </span>
             <span style={{ textAlign: "left", marginLeft: "0px" }}>Inclusive of all taxes</span>
           </p>
@@ -218,57 +191,58 @@ const ProductDetails = () => {
           </p>
 
           {/* <div>
-            <Stack padding={4} mt="4" direction="row" spacing={4} justifyContent={"center"}>
-              <Button
-                flex={1}
-                fontSize={{ base: "xs", md: "sm" }}
-                rounded="full"
-                bg="#008ecc"
-                color="white"
-                boxShadow="0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)"
-                _hover={{ bg: '#008eaa' }}
-                _focus={{ bg: '#008edd' }}
-                minWidth="200px"
-                onClick={()=>onClickBuy()}
-              >
-                Buy Now
-              </Button>
-            </Stack>
-          </div> */}
+          <Stack padding={4} mt="4" direction="row" spacing={4} justifyContent={"center"}>
+            <Button
+              flex={1}
+              fontSize={{ base: "xs", md: "sm" }}
+              rounded="full"
+              bg="#008ecc"
+              color="white"
+              boxShadow="0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)"
+              _hover={{ bg: '#008eaa' }}
+              _focus={{ bg: '#008edd' }}
+              minWidth="200px"
+              onClick={()=>onClickBuy()}
+            >
+              Buy Now
+            </Button>
+          </Stack>
+        </div> */}
           <div className='BuyButtonContainer'>
             <Text>
               <Box ml={"10px"} textAlign={"left"} >
 
                 <Box fontWeight={700} fontSize="14px">
-                  ₹3999
+                  ₹ {data.sellingPrice}
+
                 </Box>
                 <Box
                   fontSize={{ base: "14px", md: "md" }}
                   color={"green"}
                   fontWeight={600}
                 >
-                  You will save ₹833
+                  You will save ₹ {data.mrp - data.sellingPrice}
                 </Box>
               </Box>
             </Text>
             <button
               className='buynowbtn'
-              onClick={() => onClickBuy()}
+              onClick={() => onClickBuy(data._id)}
             >
               Buy Now
             </button>
           </div>
           {/* <div className="social__links space_top_bottom">
-            <a href="https://twitter.com/i/flow/login" target="_blank" rel="noopener noreferrer">
-              <CiTwitter style={{ width: "40px" }} />
-            </a>
-            <a href="https://www.whatsapp.com/" target="_blank" rel="noopener noreferrer">
-              <BsWhatsapp style={{ width: "40px" }} />
-            </a>
-            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
-              <AiOutlineFacebook style={{ width: "40px" }} />
-            </a>
-          </div> */}
+          <a href="https://twitter.com/i/flow/login" target="_blank" rel="noopener noreferrer">
+            <CiTwitter style={{ width: "40px" }} />
+          </a>
+          <a href="https://www.whatsapp.com/" target="_blank" rel="noopener noreferrer">
+            <BsWhatsapp style={{ width: "40px" }} />
+          </a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+            <AiOutlineFacebook style={{ width: "40px" }} />
+          </a>
+        </div> */}
         </div>
       </div>
       <div className="mid__section space_top_bottom space_Between">
@@ -322,7 +296,7 @@ const ProductDetails = () => {
         <a
           // className="btn"
           onClick={() => setDescription(!description)}
-          style={{ marginRight: "1re3", color:"blue", fontSize:"12px", fontWeight:"600" }}
+          style={{ marginRight: "1re3", color: "blue", fontSize: "12px", fontWeight: "600" }}
 
         >
           {description ? "Show Less" : "Show More"}
@@ -333,41 +307,41 @@ const ProductDetails = () => {
         <b>You May Also Like</b>
       </h3>
       {/* <Carousel
-        swipeable={false}
-        draggable={false}
-        showDots={true}
-        responsive={responsive}
-        className="visible"
-        keyBoardControl={true}
-        containerClass="carousel-container"
-        dotListClass="custom-dot-list-style"
-        itemClass="carousel-item-padding-40-px"
-      >
-        {imgList &&
-          imgList.map((item) => (
-            <div key={item.id} className="smallSpace idvCarousel">
-              <img
-                className="smallSpace"
-                src={item.imgSrc}
-                alt="img"
-                onClick={() => handleCurrentData(item)}
-              />
-              <p className="smallSpace">
-                <b>{item.title}</b>
-              </p>
-              <p className="smallSpace">
-                <b>₹ {item.price}</b>
-              </p>
-              <p className="smallSpace">
-                M.R.P :<span className="crossedLine">{item.mrp}</span>
-              </p>
-              <button className="btn cart-btn" onClick={() => PostToCart(item)}>
-                <span>Add To Cart</span>
-                <BsFillBagPlusFill />
-              </button>
-            </div>
-          ))}
-      </Carousel> */}
+      swipeable={false}
+      draggable={false}
+      showDots={true}
+      responsive={responsive}
+      className="visible"
+      keyBoardControl={true}
+      containerClass="carousel-container"
+      dotListClass="custom-dot-list-style"
+      itemClass="carousel-item-padding-40-px"
+    >
+      {imgList &&
+        imgList.map((item) => (
+          <div key={item.id} className="smallSpace idvCarousel">
+            <img
+              className="smallSpace"
+              src={item.imgSrc}
+              alt="img"
+              onClick={() => handleCurrentData(item)}
+            />
+            <p className="smallSpace">
+              <b>{item.title}</b>
+            </p>
+            <p className="smallSpace">
+              <b>₹ {item.price}</b>
+            </p>
+            <p className="smallSpace">
+              M.R.P :<span className="crossedLine">{item.mrp}</span>
+            </p>
+            <button className="btn cart-btn" onClick={() => PostToCart(item)}>
+              <span>Add To Cart</span>
+              <BsFillBagPlusFill />
+            </button>
+          </div>
+        ))}
+    </Carousel> */}
     </div>
   );
 };

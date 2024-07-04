@@ -119,9 +119,9 @@ function Navbar() {
 
   const optimizedFn = useCallback(debounce(handleChange), []);
 
-  useEffect(() => {
-    handleGetAllData();
-  }, [filteredData]);
+  // useEffect(() => {
+  //   handleGetAllData();
+  // }, [filteredData]);
 
   return (
     <Box>
@@ -174,51 +174,7 @@ function Navbar() {
                 <ImCross />
               </Button>
             </InputGroup>
-            {filteredData.length !== 0 ? (
-              <Hide below="md">
-                <Box
-                  w={"543px"}
-                  h={"280px"}
-                  pos="absolute"
-                  overflow={"scroll"}
-                  top={"9%"}
-                  bg="white"
-                  border={"3px solid grey"}
-                  zIndex="2000"
-                  className={searchbar == true ? "searchbarbox" : null}
-                >
-                  {filteredData.length > 0 &&
-                    filteredData.map((el, i) => {
-                      return (
-                        <Box
-                          pt={2}
-                          pl={5}
-                          _hover={{ bg: "gray", color: "white" }}
-                        >
-                          <Box display={"flex"} key={i} gap={10}>
-                            <Image
-                              w={"50px"}
-                              h={"50px"}
-                              mb={2}
-                              src={el.image}
-                              onClick={() => handleCurrentData(el)}
-                              _hover={{ cursor: "pointer" }}
-                            ></Image>
-                            <h1
-                              onClick={() => handleCurrentData(el)}
-                              _hover={{ cursor: "pointer" }}
-                            >
-                              <b>{el.name}</b>
-                            </h1>
-                          </Box>
-                        </Box>
-                      );
-                    })}
-                </Box>
-              </Hide>
-            ) : (
-              ""
-            )}
+          
           </div>
           <Flex
             gap={{ base: 1, md: 2, lg: 4 }}

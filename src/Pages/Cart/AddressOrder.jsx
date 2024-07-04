@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { AddressItem } from '../../Component/Cart/AddressItem';
 import { PaymentDetils } from '../../Component/Cart/PaymentDetils';
 import "../Cart/Address.css";
-import { useNavigate } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import { useSelector } from 'react-redux';
 import { Grid, Input, Text } from '@chakra-ui/react';
 
 export const AddressOrder = () => {
   let navigate = useNavigate();
+  const { id } = useParams(); 
 
   let [price, setPrice] = useState(0);
   let cart = useSelector((store) => store.CartReducer.cart);
@@ -73,7 +74,7 @@ export const AddressOrder = () => {
           className='PaymentBtn'
           onClick={() => {
             localStorage.setItem("price", price.toFixed(2));
-            navigate('/makepayment');
+            navigate(`/makepayment/${id}`);
           }}
         >
           Save & Proceed
